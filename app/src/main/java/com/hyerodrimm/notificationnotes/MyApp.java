@@ -5,14 +5,20 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
 
+import androidx.room.Room;
+
+import com.hyerodrimm.notificationnotes.database.AppDatabase;
+
 public class MyApp extends Application {
     public static final String NORMAL_NOTIFICATION_CHANNEL_ID = "normal_notification_channel";
     public static final String REPEAT_NOTIFICATION_CHANNEL_ID = "repeat_notification_channel";
-
+    public static AppDatabase appDatabase;
     @Override
     public void onCreate() {
         super.onCreate();
         createNotificationChannels();
+        appDatabase = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "database").allowMainThreadQueries().build();
     }
 
     private void createNotificationChannels() {

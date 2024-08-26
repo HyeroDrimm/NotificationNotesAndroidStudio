@@ -2,14 +2,11 @@ package com.hyerodrimm.notificationnotes;
 
 import android.Manifest;
 import android.app.NotificationManager;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,19 +16,22 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.hyerodrimm.notificationnotes.database.NoteSave;
+import com.hyerodrimm.notificationnotes.database.NoteSaveDao;
 import com.hyerodrimm.notificationnotes.databinding.ActivityMainBinding;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String PERMISSION_POST_NOTIFICATIONS = Manifest.permission.POST_NOTIFICATIONS;
     private static final int PERMISSION_REQ_CODE = 100;
+    private static final String PERMISSION_POST_NOTIFICATIONS = Manifest.permission.POST_NOTIFICATIONS;
+
     private NotificationManager notificationManager;
     private ActivityMainBinding binding;
 
@@ -56,11 +56,30 @@ public class MainActivity extends AppCompatActivity {
 
 
         findViewById(R.id.test_permission_button).setOnClickListener( v -> requestRuntimePermission());
-//        findViewById(R.id.send_notification_button).setOnClickListener( v -> sendNotification());
+        findViewById(R.id.send_notification_button).setOnClickListener( v ->{
+            NoteSave noteSave = createNotification("message", "title");
+            saveNotification(noteSave);
+            sendNotification(noteSave);
+            List<NoteSave> test = MyApp.appDatabase.noteSaveDao().getAll();
+        });
     }
 
-    private void sendNotification(int id, String title, String message, boolean isNormal){
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, isNormal ? MyApp.NORMAL_NOTIFICATION_CHANNEL_ID : MyApp.REPEAT_NOTIFICATION_CHANNEL_ID)
+    private NoteSave createNotification(String message, String title){
+        NoteSave noteSave = new NoteSave();
+        noteSave.message = message;
+        noteSave.title = title != null && !title.trim().isEmpty() ? title : message;
+        return noteSave;
+    }
+
+    private void saveNotification(NoteSave noteSave){
+        NoteSaveDao noteSaveDao = MyApp.appDatabase.noteSaveDao();
+        noteSaveDao.insertAll(noteSave);
+    }
+
+    private void sendNotification(NoteSave noteSave){ sendNotification(noteSave.id, noteSave.title, noteSave.message, false);}
+
+    private void sendNotification(int id, String title, String message, boolean isRepeating){
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, isRepeating ? MyApp.REPEAT_NOTIFICATION_CHANNEL_ID : MyApp.NORMAL_NOTIFICATION_CHANNEL_ID)
                 .setSmallIcon(R.drawable.baseline_article_24)
                 .setContentTitle(title)
                 .setContentText(message)
