@@ -7,6 +7,8 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -24,8 +26,6 @@ import androidx.navigation.ui.NavigationUI;
 import com.hyerodrimm.notificationnotes.database.NoteSave;
 import com.hyerodrimm.notificationnotes.database.NoteSaveDao;
 import com.hyerodrimm.notificationnotes.databinding.ActivityMainBinding;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,13 +54,16 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+        findViewById(R.id.send_notification_button).setOnClickListener( v -> {
+            EditText messageInput = (EditText)findViewById(R.id.message_input);
+            EditText titleInput = (EditText)findViewById(R.id.title_input);
 
-        findViewById(R.id.test_permission_button).setOnClickListener( v -> requestRuntimePermission());
-        findViewById(R.id.send_notification_button).setOnClickListener( v ->{
-            NoteSave noteSave = createNotification("message", "title");
-            saveNotification(noteSave);
+            NoteSave noteSave = createNotification(messageInput.getText().toString(), titleInput.getText().toString());
+            noteSave = saveNotification(noteSave);
             sendNotification(noteSave);
-            List<NoteSave> test = MyApp.appDatabase.noteSaveDao().getAll();
+
+            messageInput.setText("",  TextView.BufferType.EDITABLE);
+            titleInput.setText("",  TextView.BufferType.EDITABLE);
         });
     }
 
@@ -71,9 +74,10 @@ public class MainActivity extends AppCompatActivity {
         return noteSave;
     }
 
-    private void saveNotification(NoteSave noteSave){
+    private NoteSave saveNotification(NoteSave noteSave){
         NoteSaveDao noteSaveDao = MyApp.appDatabase.noteSaveDao();
-        noteSaveDao.insertAll(noteSave);
+        noteSave.id = (int) noteSaveDao.insert(noteSave);
+        return noteSave;
     }
 
     private void sendNotification(NoteSave noteSave){ sendNotification(noteSave.id, noteSave.title, noteSave.message, false);}

@@ -12,5 +12,8 @@ public interface NoteSaveDao {
     List<NoteSave> getAll();
 
     @Insert
-    void insertAll(NoteSave... noteSaves);
+    long[] insertAll(NoteSave... noteSaves);
+
+    @Insert
+    long insert(NoteSave noteSave);
 }
