@@ -7,12 +7,12 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ui.home.HomeFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send Note"
+        android:text="@string/send_note"
         android:textColor="@color/design_default_color_primary"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:textAlignment="textStart"
@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Write your note and send"
+        android:text="@string/write_your_note_and_send"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:textAlignment="center"
         android:textSize="24dp"/>
@@ -33,7 +33,7 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:inputType="text"
         android:text=""
-        android:hint="Message"
+        android:hint="@string/message"
         />
 
     <EditText
@@ -43,7 +43,7 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:inputType="text"
         android:text=""
-        android:hint="(Optional) Title"
+        android:hint="@string/optional_title"
         />
 
     <Button
@@ -51,8 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="Send Note"
-        android:textSize="20dp"/>
+        android:text="@string/send_note"
+        android:textSize="@dimen/Header3"/>
 
 
 

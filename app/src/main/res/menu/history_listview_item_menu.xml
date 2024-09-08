@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <item-->
+<!--        android:id="@+id/add_to_favorites"-->
+<!--        android:title="@string/add_to_favourites" />-->
+
+    <item
+        android:id="@+id/send_again"
+        android:title="@string/send_again" />
+
+<!--    <item-->
+<!--        android:id="@+id/edit"-->
+<!--        android:title="@string/edit_and_send_again" />-->
+
+    <item
+        android:id="@+id/delete"
+        android:title="@string/delete_from_history" />
+</menu>

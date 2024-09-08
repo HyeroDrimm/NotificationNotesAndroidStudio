@@ -3,4 +3,14 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="send_again">Send again</string>
+    <string name="delete_from_history">Delete from history</string>
+    <string name="send_note">Send Note</string>
+    <string name="write_your_note_and_send">Write your note and send</string>
+    <string name="message">Message</string>
+    <string name="optional_title">(Optional) Title</string>
+    <string name="history">History</string>
+    <string name="long_press_for_context_menu">Long press for context menu</string>
+    <string name="add_to_favourites">Add to favorites</string>
+    <string name="edit_and_send_again">Edit and send again</string>
 </resources>

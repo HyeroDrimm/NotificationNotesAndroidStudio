@@ -12,12 +12,12 @@ import com.hyerodrimm.notificationnotes.database.AppDatabase;
 public class MyApp extends Application {
     public static final String NORMAL_NOTIFICATION_CHANNEL_ID = "normal_notification_channel";
     public static final String REPEAT_NOTIFICATION_CHANNEL_ID = "repeat_notification_channel";
-    public static AppDatabase appDatabase;
+    public static AppDatabase historyDatabase;
     @Override
     public void onCreate() {
         super.onCreate();
         createNotificationChannels();
-        appDatabase = Room.databaseBuilder(getApplicationContext(),
+        historyDatabase = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "database").allowMainThreadQueries().build();
     }
 
