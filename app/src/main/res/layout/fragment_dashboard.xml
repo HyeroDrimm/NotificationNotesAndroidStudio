@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/long_press_for_context_menu"
+        android:text="@string/long_press_for_options"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:textAlignment="center"
         android:textSize="@dimen/Header2"/>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Notatki z powiadomieniami</string>
+    <string name="title_home">Dom</string>
+    <string name="title_dashboard">Panel</string>
+    <string name="title_notifications">Powiadomienia</string>
+    <string name="send_again">Wyślij ponownie</string>
+    <string name="delete_from_history">Usuń z historii</string>
+    <string name="send_note">Wyślij notatkę</string>
+    <string name="write_your_note_and_send">Napisz notatkę i wyślij</string>
+    <string name="message">Wiadomość</string>
+    <string name="optional_title">(Opcjonalnie) Tytuł</string>
+    <string name="history">Historia</string>
+    <string name="long_press_for_options">Naciśnij długo, aby wyświetlić opcje</string>
+    <string name="add_to_favourites">Dodaj do ulubionych</string>
+    <string name="edit_and_send_again">Edytuj i wyślij ponownie</string>
+</resources>
