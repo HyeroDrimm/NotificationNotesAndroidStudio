@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">Benachrichtigungsnotizen</string>
-    <string name="title_home">Heim</string>
-    <string name="title_dashboard">Armaturenbrett</string>
-    <string name="title_notifications">Benachrichtigungen</string>
+    <string name="app_name" translatable="false">Notification Notes</string>
+    <string name="title_home">Notiz senden</string>
+    <string name="title_dashboard">Geschichte</string>
     <string name="send_again">Nochmals senden</string>
     <string name="delete_from_history">Aus dem Verlauf löschen</string>
     <string name="send_note">Notiz senden</string>

@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">Notas de notificación</string>
-    <string name="title_home">Hogar</string>
-    <string name="title_dashboard">Panel</string>
-    <string name="title_notifications">Notificaciones</string>
+    <string name="app_name" translatable="false">Notification Notes</string>
+    <string name="title_home">Enviar nota</string>
+    <string name="title_dashboard">Historia</string>
     <string name="send_again">Enviar de nuevo</string>
     <string name="delete_from_history">Eliminar del historial</string>
     <string name="send_note">Enviar nota</string>

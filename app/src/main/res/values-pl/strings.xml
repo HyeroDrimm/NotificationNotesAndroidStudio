@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">Notatki z powiadomieniami</string>
-    <string name="title_home">Dom</string>
-    <string name="title_dashboard">Panel</string>
-    <string name="title_notifications">Powiadomienia</string>
+    <string name="app_name" translatable="false">Notification Notes</string>
+    <string name="title_home">Wyślij notatkę</string>
+    <string name="title_dashboard">Historia</string>
     <string name="send_again">Wyślij ponownie</string>
     <string name="delete_from_history">Usuń z historii</string>
     <string name="send_note">Wyślij notatkę</string>

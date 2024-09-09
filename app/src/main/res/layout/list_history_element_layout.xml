@@ -13,8 +13,10 @@
         android:text=""
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </TextView>
+        android:layout_height="match_parent"
+        android:textSize="@dimen/Text"
+        />
+
 
 
     <TextView
@@ -22,8 +24,10 @@
         android:text=""
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </TextView>
+        android:layout_height="match_parent"
+        android:textSize="@dimen/Text"
+        />
+
 
     <TextView
         android:id="@+id/history_list_time_sent"
@@ -31,7 +35,8 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </TextView>
+        android:layout_height="match_parent"
+        android:textSize="@dimen/Text"
+        />
 
 </LinearLayout>
