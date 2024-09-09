@@ -46,10 +46,10 @@ public class HomeFragment extends Fragment {
 
             NoteSave noteSave = createNotification(messageInput.getText().toString(), titleInput.getText().toString());
             noteSave = saveNotification(noteSave);
-            sendNotification(getContext(),getActivity(), notificationManager, noteSave);
-
-            messageInput.setText("",  TextView.BufferType.EDITABLE);
-            titleInput.setText("",  TextView.BufferType.EDITABLE);
+            if (sendNotification(getContext(), getActivity(), notificationManager, noteSave)){
+                messageInput.setText("",  TextView.BufferType.EDITABLE);
+                titleInput.setText("",  TextView.BufferType.EDITABLE);
+            }
         });
         return root;
     }

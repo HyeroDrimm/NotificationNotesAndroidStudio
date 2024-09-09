@@ -14,6 +14,8 @@ import androidx.core.app.NotificationCompat;
 import com.hyerodrimm.notificationnotes.database.NoteSave;
 import com.hyerodrimm.notificationnotes.database.NoteSaveDao;
 
+import java.util.Calendar;
+
 public class NotificationHelper {
     public static final String PERMISSION_POST_NOTIFICATIONS = Manifest.permission.POST_NOTIFICATIONS;
     public static final int PERMISSION_REQ_CODE = 100;
@@ -39,8 +41,9 @@ public class NotificationHelper {
 
     public static NoteSave createNotification(String message, String title){
         NoteSave noteSave = new NoteSave();
-        noteSave.message = message;
-        noteSave.title = title != null && !title.trim().isEmpty() ? title : message;
+        noteSave.message = message.trim();
+        noteSave.title = title.trim();
+        noteSave.datetime = Calendar.getInstance().getTime().getTime();
         return noteSave;
     }
 
@@ -50,22 +53,25 @@ public class NotificationHelper {
         return noteSave;
     }
 
-    public static void sendNotification(Context context, Activity activity, NotificationManager notificationManager,NoteSave noteSave){ sendNotification(context, activity,notificationManager, noteSave.id, noteSave.title, noteSave.message, false);}
+    public static boolean sendNotification(Context context, Activity activity, NotificationManager notificationManager,NoteSave noteSave){ return sendNotification(context, activity,notificationManager, noteSave.id, noteSave.title, noteSave.message, false);}
 
-    public static void sendNotification(Context context, Activity activity, NotificationManager notificationManager, int id, String title, String message, boolean isRepeating){
+    public static boolean sendNotification(Context context, Activity activity, NotificationManager notificationManager, int id, String title, String message, boolean isRepeating){
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, isRepeating ? MyApp.REPEAT_NOTIFICATION_CHANNEL_ID : MyApp.NORMAL_NOTIFICATION_CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_notifications_black_24dp)
-                .setContentTitle(title)
+                .setContentTitle(title != null && !title.trim().isEmpty() ? title : message)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
         if (!isNotificationPermissionGranted(context)) {
             requestRuntimePermission(context, activity);
+            return false;
         }
 
         if (notificationManager != null){
             notificationManager.notify(id, builder.build());
+            return true;
         }
+        return false;
     }
 
     public static boolean isNotificationPermissionGranted(Context context){

@@ -12,4 +12,7 @@
     <string name="long_press_for_options">Naciśnij długo, aby wyświetlić opcje</string>
     <string name="add_to_favourites">Dodaj do ulubionych</string>
     <string name="edit_and_send_again">Edytuj i wyślij ponownie</string>
+    <string name="history_element_title">Tytuł:</string>
+    <string name="history_element_message">Wiadomość:</string>
+    <string name="history_element_time_send">Czas wysłania:</string>
 </resources>

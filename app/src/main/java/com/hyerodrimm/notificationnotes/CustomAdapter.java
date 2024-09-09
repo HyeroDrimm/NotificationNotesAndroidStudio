@@ -12,7 +12,9 @@ import androidx.annotation.Nullable;
 
 import com.hyerodrimm.notificationnotes.database.NoteSave;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class CustomAdapter extends ArrayAdapter<NoteSave>
 //        implements View.OnClickListener
@@ -62,9 +64,14 @@ public class CustomAdapter extends ArrayAdapter<NoteSave>
         TextView txtTimeSend = (TextView) currentItemView.findViewById(R.id.history_list_time_sent);
 
         if (dataModel != null){
-            txtTitle.setText("Title: " + dataModel.title);
-            txtMessage.setText("Message: " + dataModel.message);
-            txtTimeSend.setText("Time send: " + "Placeholder");
+            if (dataModel.title != null && !dataModel.title.isEmpty()){
+                txtTitle.setText(getContext().getText(R.string.history_element_title) + " " + dataModel.title);
+            }else{
+                txtTitle.setVisibility(View.GONE);
+            }
+            txtMessage.setText(getContext().getText(R.string.history_element_message) + " " + dataModel.message);
+            SimpleDateFormat originalFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+            txtTimeSend.setText(getContext().getText(R.string.history_element_time_send) + " " + originalFormat.format(new Date(dataModel.datetime)));
         }
 
         return currentItemView;

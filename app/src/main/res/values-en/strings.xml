@@ -12,4 +12,7 @@
     <string name="long_press_for_options">Long press for options</string>
     <string name="add_to_favourites">Add to favorites</string>
     <string name="edit_and_send_again">Edit and send again</string>
+    <string name="history_element_title">Title:</string>
+    <string name="history_element_message">Message:</string>
+    <string name="history_element_time_send">Time send:</string>
 </resources>

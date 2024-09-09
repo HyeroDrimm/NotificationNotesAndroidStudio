@@ -14,4 +14,7 @@ public class NoteSave {
 
     @ColumnInfo(name = "message")
     public String message;
+
+    @ColumnInfo(name = "datetime")
+    public long datetime;
 }
