@@ -28,6 +28,7 @@ import com.hyerodrimm.notificationnotes.database.NoteSaveDao;
 import com.hyerodrimm.notificationnotes.databinding.FragmentDashboardBinding;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DashboardFragment extends Fragment {
 
@@ -95,7 +96,9 @@ public class DashboardFragment extends Fragment {
 
     private ArrayList<NoteSave> getNotesHistory() {
         NoteSaveDao noteSaveDao = MyApp.historyDatabase.noteSaveDao();
-        return (ArrayList<NoteSave>) noteSaveDao.getAll();
+        ArrayList<NoteSave> output = (ArrayList<NoteSave>) noteSaveDao.getAll();
+        Collections.reverse(output);
+        return output;
     }
 
 }
