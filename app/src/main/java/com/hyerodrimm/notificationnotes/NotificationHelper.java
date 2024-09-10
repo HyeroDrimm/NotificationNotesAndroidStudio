@@ -57,7 +57,7 @@ public class NotificationHelper {
 
     public static boolean sendNotification(Context context, Activity activity, NotificationManager notificationManager, int id, String title, String message, boolean isRepeating){
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, isRepeating ? MyApp.REPEAT_NOTIFICATION_CHANNEL_ID : MyApp.NORMAL_NOTIFICATION_CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_notifications_black_24dp)
+                .setSmallIcon(R.drawable.ic_stat_notifications)
                 .setContentTitle(title != null && !title.trim().isEmpty() ? title : message)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
