@@ -9,7 +9,7 @@
     <string name="message">Nachricht</string>
     <string name="optional_title">(Optional) Titel</string>
     <string name="history">Geschichte</string>
-    <string name="long_press_for_options">Langes Drücken für Optionen</string>
+    <string name="long_press_for_options">Halten Sie für Optionen gedrückt</string>
     <string name="add_to_favourites">Zu Favoriten hinzufügen</string>
     <string name="edit_and_send_again">Bearbeiten und erneut senden</string>
     <string name="history_element_title">Titel:</string>

@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/long_press_for_options"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginTop="26dp"
         android:textAlignment="center"
         android:textSize="@dimen/Header2"/>
 
@@ -31,5 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="2sp"
         />
 </LinearLayout>

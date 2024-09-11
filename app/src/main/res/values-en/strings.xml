@@ -9,7 +9,7 @@
     <string name="message">Message</string>
     <string name="optional_title">(Optional) Title</string>
     <string name="history">History</string>
-    <string name="long_press_for_options">Long press for options</string>
+    <string name="long_press_for_options">Hold for options</string>
     <string name="add_to_favourites">Add to favorites</string>
     <string name="edit_and_send_again">Edit and send again</string>
     <string name="history_element_title">Title:</string>

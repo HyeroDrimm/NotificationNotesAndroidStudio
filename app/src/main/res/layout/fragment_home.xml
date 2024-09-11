@@ -21,10 +21,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
         android:text="@string/write_your_note_and_send"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:textAlignment="center"
-        android:textSize="@dimen/Header2"/>
+        android:textSize="@dimen/Header2" />
 
     <EditText
         android:id="@+id/message_input"

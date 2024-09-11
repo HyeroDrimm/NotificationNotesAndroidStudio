@@ -9,7 +9,7 @@
     <string name="message">Wiadomość</string>
     <string name="optional_title">(Opcjonalnie) Tytuł</string>
     <string name="history">Historia</string>
-    <string name="long_press_for_options">Naciśnij długo, aby wyświetlić opcje</string>
+    <string name="long_press_for_options">Przytrzymaj, aby wyświetlić opcje</string>
     <string name="add_to_favourites">Dodaj do ulubionych</string>
     <string name="edit_and_send_again">Edytuj i wyślij ponownie</string>
     <string name="history_element_title">Tytuł:</string>
