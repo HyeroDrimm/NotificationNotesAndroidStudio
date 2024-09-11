@@ -12,5 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="colorBackgroundHistoryElement">@color/very_light_gray</item>
+
     </style>
 </resources>
